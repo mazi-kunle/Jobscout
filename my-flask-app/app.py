@@ -26,7 +26,7 @@ def form():
 	specilization = request.form['specilization']
 	location = request.form['location']
 
-	return render_template('')
+	# return render_template('')
 
 
 
