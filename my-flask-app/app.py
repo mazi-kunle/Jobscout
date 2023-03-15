@@ -6,6 +6,7 @@ backend of jobscout
 
 from flask import Flask, render_template, request
 import requests
+import os
 
 
 app = Flask(__name__)
@@ -23,10 +24,28 @@ def form():
 	'''
 	extract data from form and parse it to the api
 	'''
-	specilization = request.form['specilization']
+	specialization = request.form['specialization']
 	location = request.form['location']
 
-	# return render_template('')
+	API_KEY = os.getenv('API_KEY')
+	API_HOST = os.genenv('API_HOST')
+
+	url = "https://linkedin-jobs-search.p.rapidapi.com/"
+	payload = {
+		'search_terms': specialization,
+		'location': location,
+		'page': '1'
+	}
+
+	headers = {
+		'content-type': 'application/json',
+		'X-RapidAPI-Key': API_KEY,
+		'X-RapidAPI-Host': API_HOST
+	}
+
+	res = requests.request("POST", url, json=payload, headers=headers)
+
+
 
 
 
