@@ -4,7 +4,7 @@ A python module that handles the
 backend of jobscout
 '''
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, abort
 import requests
 import os
 
@@ -43,7 +43,12 @@ def form():
 		'X-RapidAPI-Host': API_HOST
 	}
 
-	res = requests.request("POST", url, json=payload, headers=headers)
+	res = requests.post(url, json=payload, headers=headers)
+
+	if res.status_code != 200:
+		abort(404, description='Resource not found')
+	
+	data = res.json()
 
 
 
