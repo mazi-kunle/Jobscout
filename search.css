@@ -1,8 +1,16 @@
 form {
+
 	display: flex;
+    max-width: 400px;
 	flex-direction: column;
+    margin-top: 6%;
+	padding: 20px;
 	align-items: center;
-	margin-top: 50px;
+    margin-left: 35%;
+    background-color: gray;
+    border-radius: 10px;
+	box-shadow: 0px 0px 10px #ccc;
+    
 }
 
 label {
@@ -16,10 +24,11 @@ input[type=text] {
 	border: 1px solid black;
 	margin-bottom: 10px;
 	width: 300px;
+	color: black;
 }
 
 input[type=button] {
-	background-color: #af7a4c;
+	background-color:  rgb(0, 247, 255);
 	color: rgb(44, 24, 24);
 	padding: 10px 20px;
 	border: none;
@@ -29,6 +38,10 @@ input[type=button] {
 }
 
 input[type=button]:hover {
-	background-color: #4f19b3;
+	background-color: rgb(0, 247, 255);
 }
-
+h1{
+	color:rgb(0, 247, 255);
+	margin-left: 10%;
+	font-size: 40px;
+}
