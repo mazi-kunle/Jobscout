@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title> JobScout</title> 
+   <link rel="stylesheet" type="text/css" href="scout.css">
+<style>
+    body{
+        padding: 0px;
+        margin: 0px;
+        background-color: black
+    }
+</style>
+</head>
+
+<body>
+    <div class="container">
+        <form action="login.php" method="post">
+            <h2>Enter Details to log into your account</h2>
+            <label for="emailaddress">Email address:</label>
+            <input type="text" id="emailaddress" placeholder="Enter your email" name="emailaddress" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            
+            <input type="submit" value="Login">
+        </form>
+    </div>
+</body>
+</html>
