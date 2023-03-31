@@ -16,7 +16,7 @@ def index():
 	'''
 	returns the home page
 	'''
-	return render_template('index.html')
+	return render_template('landing.html')
 
 
 @app.route('/result', strict_slashes=False, methods=['POST'])
