@@ -73,8 +73,8 @@ padding: 0;
     cursor: Pointer;
 }
 .logbtn{
-    width: 15%;
-    height: 5%;
+    width: 25%;
+    height: 10%;
     background-color: rgb(0, 174, 255);
     animation: pulse 1s infinite;
     border-radius: 10px;
@@ -85,31 +85,6 @@ padding: 0;
     top: 74%;
     Left: 3%;
 }
-@keyframes pulse {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.05);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-.btnsign{
-    width: 15%;
-    height: 5%;
-    background-color: gray;
-    animation: pulse 1s infinite;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    border-radius: 10%;
-    top: 65%;
-    Left: 3%;
-    padding: 10px 20px;
-    font-size:18px;
-}
-
 @keyframes pulse {
     0% {
       transform: scale(1);
