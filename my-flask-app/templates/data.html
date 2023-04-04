@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Data</title>
+</head>
+<body>
+	<div>
+		{% for i in data %}
+		  <div>
+		    <p>Name Of Company: {{ i['normalized_company_name'] }}</p>
+		  	<p>Job Location: {{ i['job_location'] }}</p>
+		  	<p>Job Title: {{ i['job_title'] }}</p>
+		  	<a href="{{ i['linkedin_company_url_cleaned'] }}">visit linked-in</a>
+		  </div>
+		  <hr>
+		{% endfor %}
+	</div>
+
+</body>
+</html>    

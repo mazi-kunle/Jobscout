@@ -7,6 +7,7 @@ backend of jobscout
 from flask import Flask, render_template, request, abort, jsonify
 import requests
 import os
+import json
 
 
 app = Flask(__name__)
@@ -53,13 +54,15 @@ def form():
 		'X-RapidAPI-Host': API_HOST
 	}
 
-	res = requests.post(url, json=payload, headers=headers)
+	# res = requests.post(url, json=payload, headers=headers)
 
-	if res.status_code != 200:
-		abort(404, description='Resource not found')
+	# if res.status_code != 200:
+	# 	abort(404, description='Resource not found')
 	
-	data = res.json()
-	return data
+	with open('storage.json') as f:
+		data = json.load(f)
+	# data = res.json()
+	return render_template('data.html', data=data)
 
 
 
