@@ -5,9 +5,9 @@
 }
 
 .container {
-height: 100vh;
-width: 185vh;
+height:200px;
 background-size: cover;
+background-color:rgb(0, 217, 255);
 background-position: center;
 position: relative;
 padding:0%;
@@ -32,7 +32,7 @@ form {
 	padding: 20px;
 	align-items: center;
     margin-left: 35%;
-    background-color: gray;
+    background-color: orange;
     border-radius: 10px;
 	box-shadow: 0px 0px 10px #ccc;
     
@@ -61,5 +61,30 @@ input[type="submit"] {
     width: 100px;
     height: 100px;
     cursor: pointer;
-    margin-left: 0;
+    margin-left: 5%;
+    margin-top: 1%;
 }
+.homebtn{
+    width: 10%;
+    height: 5%;
+    background-color: rgb(0, 229, 255);
+    animation: pulse 1s infinite;
+    border-radius: 10px;
+    position: absolute;
+    padding: 10px 20px;
+    font-size:18px;
+    transform: translate(-50%, -50%);
+    top: 4%;
+    Left: 85%;
+}
+@keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
