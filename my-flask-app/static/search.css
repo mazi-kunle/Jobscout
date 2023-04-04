@@ -54,7 +54,7 @@ label, input {
 input[type="submit"] {
     width: 20%;
 	margin-top: 20px;
-    background-color: rgb(0, 229, 255);
+    background-color: gray;
 }
 
 .logo{
