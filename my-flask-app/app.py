@@ -4,7 +4,7 @@ A python module that handles the
 backend of jobscout
 '''
 
-from flask import Flask, render_template, request, abort
+from flask import Flask, render_template, request, abort, jsonify
 import requests
 import os
 
@@ -19,17 +19,27 @@ def index():
 	return render_template('landing.html')
 
 
+@app.route('/search', strict_slashes=False)
+def search():
+	'''
+	handle the search route
+	'''
+	return render_template('search.html')
+
+
 @app.route('/result', strict_slashes=False, methods=['POST'])
 def form():
 	'''
 	extract data from form and parse it to the api
 	'''
-	specialization = request.form['specialization']
-	location = request.form['location']
+	form_data = request.form
+	specialization = form_data['Specialization']
+	location = form_data['Location']
+
 
 	API_KEY = os.getenv('API_KEY')
-	API_HOST = os.genenv('API_HOST')
-
+	API_HOST = os.getenv('API_HOST')
+	
 	url = "https://linkedin-jobs-search.p.rapidapi.com/"
 	payload = {
 		'search_terms': specialization,
@@ -49,6 +59,7 @@ def form():
 		abort(404, description='Resource not found')
 	
 	data = res.json()
+	return data
 
 
 
