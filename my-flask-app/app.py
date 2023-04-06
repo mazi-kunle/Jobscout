@@ -54,14 +54,14 @@ def form():
 		'X-RapidAPI-Host': API_HOST
 	}
 
-	# res = requests.post(url, json=payload, headers=headers)
+	res = requests.post(url, json=payload, headers=headers)
 
-	# if res.status_code != 200:
-	# 	abort(404, description='Resource not found')
+	if res.status_code != 200:
+		abort(404, description='Resource not found')
 	
-	with open('storage.json') as f:
-		data = json.load(f)
-	# data = res.json()
+	# with open('storage.json') as f:
+	# 	data = json.load(f)
+	data = res.json()
 	return render_template('data.html', data=data)
 
 
