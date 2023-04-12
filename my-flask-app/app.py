@@ -33,11 +33,12 @@ def form():
 	'''
 	extract data from form and parse it to the api
 	'''
+	# get form data
 	form_data = request.form
 	specialization = form_data['Specialization']
 	location = form_data['Location']
 
-
+	# get environmental variables
 	API_KEY = os.getenv('API_KEY')
 	API_HOST = os.getenv('API_HOST')
 	
@@ -53,9 +54,11 @@ def form():
 		'X-RapidAPI-Key': API_KEY,
 		'X-RapidAPI-Host': API_HOST
 	}
-
+	
+	# send POST request
 	res = requests.post(url, json=payload, headers=headers)
 
+	# If any error, abort
 	if res.status_code != 200:
 		abort(404, description='Resource not found')
 	
